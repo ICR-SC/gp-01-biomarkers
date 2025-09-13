@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def load_data(file_path):
     """Load data from a CSV file."""
-    df = pd.read_csv(file_path, sep="\t", header=2)
+    df = pd.read_csv(file_path, sep="\t", header=2, index_col=False)
     return df
 
 def clean_data(df):
@@ -34,9 +34,7 @@ if __name__ == "__main__":
     df_cleaned = clean_data(df)
     save_data(df_cleaned, "data/processed/cleaned_data.csv")
     fig = analyze_data(df_cleaned)
-    fig.savefig("results/mutation_summary.png")
-    print(df)
-    
+    fig.savefig("results/top_mutated_genes.png")         
         
     
 
