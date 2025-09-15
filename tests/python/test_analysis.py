@@ -27,7 +27,7 @@ def test_pipeline_smoke(tmp_path):
     print(df_cleaned)
     fig = analyze_data(df_cleaned)    
     fig.savefig(f"{tmp_path}/top_mutated_genes.png")
-    assert os.path.exists(f"{tmp_path}/top_mutated_genes.png")
+       assert os.path.exists(f"{tmp_path}/top_mutated_genes.png")
 
 if __name__ == "__main__":
     import tempfile
