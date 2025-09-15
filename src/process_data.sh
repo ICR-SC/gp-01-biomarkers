@@ -1,6 +1,2 @@
 #!/bin/bash
-for file in data/raw/*.csv; do
-    echo "Processing $file" 
-    # Uncomment the next line to actually copy the files
-    cp "$file" data/processed/    
-done
+Rscript src/R/analysis.R "data/raw/aml_tcga_gdc/data_mutations.txt"
