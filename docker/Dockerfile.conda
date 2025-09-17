@@ -1,0 +1,20 @@
+# ---------- Python dockerfile --------------------------------
+# BUILD IT:     docker build -f docker/Dockerfile.conda -t good-conda .
+# CHECK IT:     docker run -it good-conda /bin/bash
+# RUN IT:       docker run -v ./data:/app/data -v ./results:/app/results good-conda
+# -------------------------------------------------------------
+# filepath: Dockerfile.conda
+FROM continuumio/miniconda3:latest
+WORKDIR /app
+# Copy your environment file and create it
+COPY environment.yml .
+RUN conda env create -f environment.yml
+# Ensure conda environment is activated by default
+SHELL ["conda", "run", "-n", "good-env", "/bin/bash", "-c"]
+# Copy the code
+COPY src/python/analysis.py ./analysis.py
+COPY src/R/analysis.R ./analysis.R
+# Set entrypoint to run either script (pass as argument)
+ENTRYPOINT ["conda", "run", "-n", "good-env"]
+# Default command (can be overridden)
+CMD ["python", "analysis.py"]

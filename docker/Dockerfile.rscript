@@ -1,0 +1,10 @@
+# ---------- Python dockerfile --------------------------------
+# BUILD IT:     docker build -f docker/Dockerfile.rscript -t good-r .
+# CHECK IT:     docker run -it good-r /bin/bash
+# RUN IT:       docker run -v ./data:/app/data -v ./results:/app/results good-r
+# -------------------------------------------------------------
+FROM rocker/r-base:4.3.1
+WORKDIR /app
+RUN R -e "install.packages(c('tidyverse', 'ggplot2', 'testthat'), repos='https://cloud.r-project.org')"
+COPY src/R/analysis.R ./analysis.R
+CMD ["Rscript", "analysis.R"]

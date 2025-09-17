@@ -1,0 +1,10 @@
+# ---------- Python dockerfile --------------------------------
+# BUILD IT:     docker build -f docker/Dockerfile.python -t good-python .
+# CHECK IT:     docker run -it good-python /bin/bash
+# RUN IT:       docker run -v ./data:/app/data -v ./results:/app/results good-python
+# -------------------------------------------------------------
+FROM python:3.13-slim
+WORKDIR /app
+RUN pip install pandas matplotlib pytest
+COPY src/python/analysis.py ./analysis.py
+CMD ["python", "analysis.py"]
