@@ -18,4 +18,12 @@ To run the main python script type in the console:
  python src/python/analysis.py
 ```
 
+## R Code
+The environment should activate from the lock file on opening (VSCode or RStudio).  
+To run the main R script, typpe in the console:
+```bash
+Rscript src/R/analysis.R
+```
+
+
 
