@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-#import matplotlib
-#matplotlib.use("Agg")
+import matplotlib
+matplotlib.use("Agg")
 
 def load_data(file_path):
     """Load data from a CSV file."""
