@@ -4,5 +4,7 @@ data/raw/aml_tcga_gdc/*
 .Rhistory
 .RData
 .Rproj.user/
+.pytest_cache/
+__pycache__/
 renv/
 environment/
