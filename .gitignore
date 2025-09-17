@@ -1,5 +1,6 @@
-*.csv
 data/raw/*
+data/raw/aml_tcga_gdc/*
+!data/raw/aml_tcga_gdc/data_mutations.txt
 .Rhistory
 .RData
 .Rproj.user/
