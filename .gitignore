@@ -5,3 +5,4 @@ data/raw/aml_tcga_gdc/*
 .RData
 .Rproj.user/
 renv/
+environment/
