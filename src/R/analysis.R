@@ -33,10 +33,10 @@ analyse_data <- function(df) {
 }
 
 # Example usage
-args <- commandArgs(trailingOnly=TRUE)
-data_file <- args[1]
+#args <- commandArgs(trailingOnly=TRUE)
+data_file <- "data/raw/aml_tcga_gdc/data_mutations.txt"
 df <- load_data(data_file)
 df_clean <- clean_data(df)
-save_data(df_clean, "data/processed/cleaned_mutations.tsv")
+save_data(df_clean, "data/processed/cleaned_mutations_R.tsv")
 p <- analyse_data(df_clean)
-ggsave("results/top_mutated_genes.png", plot = p, width = 8, height = 5)
+ggsave("results/top_mutated_genes_R.png", plot = p, width = 8, height = 5)

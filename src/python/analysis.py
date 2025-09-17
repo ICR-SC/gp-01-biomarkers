@@ -30,11 +30,11 @@ def analyze_data(df):
     return fig
 
 if __name__ == "__main__":
-    df = load_data("data/raw/aml_target_gdc/data_mutations.txt")
+    df = load_data("data/raw/aml_tcga_gdc/data_mutations.txt")
     df_cleaned = clean_data(df)
     save_data(df_cleaned, "data/processed/cleaned_data.csv")
     fig = analyze_data(df_cleaned)
-    fig.savefig("results/top_mutated_genes.png")         
+    fig.savefig("results/top_mutated_genes_python.png")
         
     
 
