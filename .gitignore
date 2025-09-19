@@ -1,3 +1,4 @@
+# Ignore Python cache files
 data/raw/*
 data/raw/aml_tcga_gdc/*
 !data/raw/aml_tcga_gdc/data_mutations.txt
@@ -5,6 +6,8 @@ data/raw/aml_tcga_gdc/*
 .RData
 .Rproj.user/
 .pytest_cache/
-__pycache__/
+*.pyc
 renv/
 environment/
+good-conda.sif
+good-conda.tar
